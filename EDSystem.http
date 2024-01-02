@@ -1,0 +1,6 @@
+@EDSystem_HostAddress = http://localhost:5122
+
+GET {{EDSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
