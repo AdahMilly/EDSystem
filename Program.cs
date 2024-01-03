@@ -18,6 +18,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 //register a service
 builder.Services.AddScoped<ICourse, CourseService>();
+builder.Services.AddScoped<IUser, UserService>();
+
 //use automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();

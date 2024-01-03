@@ -8,6 +8,7 @@ namespace EDSystem.Profiles
         public CourseProfiles()
         {
             CreateMap<AddCourseDto, Course>().ReverseMap();
+            CreateMap<AddUserDto, User>().ReverseMap();
         }
         
     }

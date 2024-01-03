@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EDSystem.Services
 {
     public class CourseService : ICourse
+        //receiving an instance of the db context class
     {
         private readonly ApplicationDbContext _context;
         public CourseService(ApplicationDbContext context)
