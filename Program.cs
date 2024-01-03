@@ -2,6 +2,7 @@ using EDSystem.Data;
 using EDSystem.Services.IService;
 using EDSystem.Services;
 using Microsoft.EntityFrameworkCore;
+using EDSystem.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //register a service
 builder.Services.AddScoped<ICourse, CourseService>();
 builder.Services.AddScoped<IUser, UserService>();
-
+builder.Services.AddScoped<IJwt, JwtService>();
+builder.AddSwaggenGenExtension();
 //use automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();

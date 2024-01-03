@@ -11,12 +11,15 @@ namespace EDSystem.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        public readonly IMapper _mapper;
+        private readonly IMapper _mapper;
         private readonly IUser _userService;
-        public UserController(IMapper mapper, IUser user)
+        private readonly IJwt _jwtService;
+        public UserController(IMapper mapper, IUser user, IJwt jwtService)
         {
             _mapper = mapper;
             _userService = user;
+            _jwtService = jwtService;
+
         }
         [HttpPost("register")]
         public async Task<ActionResult<string>> RegisterUser(AddUserDto addUserDto)
@@ -45,7 +48,8 @@ namespace EDSystem.Controllers
             {
                 return BadRequest("Invalid Credentials");
             }
-            return Ok($"Welcome {checkIfUserExists.Name}");
+            var token = _jwtService.GenerateToken(checkIfUserExists);
+            return Ok(token);
         }
     }
 }
