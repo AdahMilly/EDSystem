@@ -2,6 +2,7 @@
 using EDSystem.Models;
 using EDSystem.Models.Dtos;
 using EDSystem.Services.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -21,6 +22,7 @@ namespace EDSystem.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<Course>>> GetAllCourses() { 
             var courses = await _courseService.GetAllCourses();
             return Ok(courses);
@@ -36,6 +38,7 @@ namespace EDSystem.Controllers
             return Ok(course);
         }
         [HttpPut("id")]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<string>> UpdateCourse(Guid id, AddCourseDto updateCourse)
         {
             var course = await _courseService.GetCourse(id);
@@ -48,6 +51,7 @@ namespace EDSystem.Controllers
             return Ok(response);
         }
         [HttpDelete("id")]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<string>> DeleteCourse(Guid id)
         {
             var course = await _courseService.GetCourse(id);
@@ -60,6 +64,7 @@ namespace EDSystem.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "Admin")]
         public async Task<ActionResult<string>> AddCourse(AddCourseDto courseDto)
         {
             //convert an instance of AddCourseDto to an instance of Course using automapper
