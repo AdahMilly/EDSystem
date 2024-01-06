@@ -6,10 +6,10 @@ It has a normal use and an instructor, two user roles.
 It's using Swagger for API documentation and testing.
 
 ## Version1
-''' http://localhost:29435/swagger '''
+``` http://localhost:29435/swagger ```
 
-![EdSystem](./.ReadmeImgs/sw.png)
+![Swagger](.\EDSystem\ReadmeImgs\sw.png)
 
 #endpoints
 
-![EdSystem](./.ReadmeImgs/end.png)
+![EdSystem](.\EDSystem\ReadmeImgs\end.png)
