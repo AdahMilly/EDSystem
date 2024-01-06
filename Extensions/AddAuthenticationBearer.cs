@@ -18,7 +18,7 @@ namespace EDSystem.Extensions
 
                     ValidAudience = builder.Configuration.GetSection("JwtOptions: Audience").Value,
                     ValidIssuer = builder.Configuration.GetSection("JwtOptions: Issuer").Value,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JwtOptions: SecretKey").Value))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("JwtOptions:SecretKey").Value))
                 };
 
             });
