@@ -8,8 +8,8 @@ It's using Swagger for API documentation and testing.
 ## Version1
 ``` http://localhost:29435/swagger ```
 
-![Swagger](.\EDSystem\ReadmeImgs\sw.png)
+![Swagger](ReadmeImgs\sw.png)
 
 #endpoints
 
-![EdSystem](.\EDSystem\ReadmeImgs\end.png)
+![EdSystem](ReadmeImgs\end.png)
