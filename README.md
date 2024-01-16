@@ -6,7 +6,7 @@ It has a normal use and an instructor, two user roles.
 It's using Swagger for API documentation and testing.
 
 ## Version1
-``` http://localhost:29435/swagger ```
+``` http://localhost:5122/swagger/index.html ```
 
 
 ![EdSystem](./ReadmeImgs/end.png)
